@@ -5,10 +5,16 @@ $(".navbar-collapse ul li a[href^='#']").on('click', function(e) {
 
    // store hash
    var hash = this.hash;
+   var w = $(window).width();
+   var top = 50;
+
+   if (w <= 767) {
+       top = 150;
+   }
 
    // animate
    $('html, body').animate({
-       scrollTop: $(hash).offset().top -50
+       scrollTop: $(hash).offset().top -top
      }, 300, function(){
 
        // when done, add hash to url
@@ -28,7 +34,7 @@ $("a.navbar-brand[href^='#']").on('click', function(e) {
 
    // animate
    $('html, body').animate({
-       scrollTop: $(hash).offset().top -50
+       scrollTop: $(hash).offset().top -top
      }, 300, function(){
 
        // when done, add hash to url
